@@ -34,33 +34,17 @@ testRedis();
 
 const app = express();
 
-// // require('../startup/db.js')()
-// const userName = "root";
-// const password = "example";
-// const databasePort = "27017";
-// const host = "mongo";
-
-// const db = `mongodb://${userName}:${password}@${host}:${databasePort}`;
-// mongoose
-//   .connect(db)
-//   .then(() => console.log("mongo is connected sucessfully..."))
-//   .catch((err) => console.log("error in connecting to mongo", err));
-
-
+// require('../startup/db.js')()
 const userName = "root";
 const password = "example";
-const databasePort = "5432";
-const host = "postgres";
+const databasePort = "27017";
+const host = "mongo";
 
-const db = `postgres://${userName}:${password}@${host}:${databasePort}`;
-const client = new Client({
-  connectionString:db,
-})
-
-client
-  .connect()
-  .then(() => console.log("postgres is connected sucessfully..."))
-  .catch((err) => console.log("error in connecting to postgres", err));
+const db = `mongodb://${userName}:${password}@${host}:${databasePort}`;
+mongoose
+  .connect(db)
+  .then(() => console.log("mongo is connected sucessfully..."))
+  .catch((err) => console.log("error in connecting to mongo", err));
 
 
 startupDebugger("hello");
