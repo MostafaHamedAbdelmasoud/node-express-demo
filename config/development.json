@@ -1,0 +1,6 @@
+{
+    "name":"My Express Guru APP",
+    "mail":{
+        "host":"mailtrap"
+    }
+}
