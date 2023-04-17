@@ -8,7 +8,7 @@ const morgan = require("morgan");
 const courses = require("../routes/courses");
 const home = require("../routes/home");
 const mongoose = require("mongoose");
-const { Client } = require('pg')
+// const { Client } = require('pg')
  
 const {createClient} = require("redis");
 const redisPort =6379;
