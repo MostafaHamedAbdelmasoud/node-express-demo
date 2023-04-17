@@ -34,7 +34,7 @@ services:
   nginx:
     image: nginx:stable-alpine
     ports:
-    - "80:81"
+    - "81:81"
     depends_on:
       - node-app
     volumes:
