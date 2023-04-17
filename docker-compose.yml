@@ -2,6 +2,7 @@ version: "3"
 services:
   node-app:
     container_name: express-demo-container-docker
+    image: 2880932/docker-nodeapi
     ports:
       - "4000:4000"
     env_file:
