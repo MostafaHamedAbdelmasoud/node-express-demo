@@ -67,7 +67,7 @@ if (app.get("env") === "development") {
 }
 
 app.get("/",async (req, res) => {
-  await redisClient.set("key", "hello it is from redis!");
+  await redisClient.set("key", "hello it is from redis 2!");
   // const value = await redisClient.get("key");
   // await redisClient.disconnect();
   res.send("mostafa1");
