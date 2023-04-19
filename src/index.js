@@ -8,6 +8,7 @@ const morgan = require("morgan");
 const courses = require("../routes/courses");
 const home = require("../routes/home");
 const mongoose = require("mongoose");
+const os = require("os");
 // const { Client } = require('pg')
  
 const {createClient} = require("redis");
@@ -70,7 +71,8 @@ app.get("/",async (req, res) => {
   await redisClient.set("key", "hello it is from node using docker hub!");
   // const value = await redisClient.get("key");
   // await redisClient.disconnect();
-  res.send("mostafa1");
+  console.log(`traffic ${os.hostname}`);
+  res.send("mostafa1 hello from docker image with watchtower");
 });
 
 app.get("/data",async (req, res) => {
