@@ -1,7 +1,7 @@
 version: "3"
 services:
   node-app:
-    image: msoliman50/tresmerge-docker
+    image: 2880932/docker-nodeapi
     env_file:
       - ./.env
     deploy:
