@@ -11,22 +11,22 @@ services:
       - mongo
       # - postgres
       - redis
-    deploy:
-      replicas: 0
-      restart_policy:
-        condition: on-failure
-      # resources:
-      #   limits:
-      #     cpus: '0.50'
-      #     memory: 50M
-      #   reservations:
-      #     cpus: '0.25'
-      #     memory: 20M
-      update_config:
-        parallelism: 1
-        delay: 10s
-      placement:
-        max_replicas_per_node: 1
+    # deploy:
+    #   replicas: 0
+    #   restart_policy:
+    #     condition: on-failure
+    #   # resources:
+    #   #   limits:
+    #   #     cpus: '0.50'
+    #   #     memory: 50M
+    #   #   reservations:
+    #   #     cpus: '0.25'
+    #   #     memory: 20M
+    #   update_config:
+    #     parallelism: 1
+    #     delay: 10s
+    #   placement:
+    #     max_replicas_per_node: 1
   mongo:
     image: mongo
     restart: always
@@ -51,7 +51,7 @@ services:
   nginx:
     image: nginx:stable-alpine
     ports:
-    - "81:81"
+    - "80:81"
     depends_on:
       - node-app
     volumes:
