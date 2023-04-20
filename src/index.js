@@ -69,8 +69,8 @@ if (app.get("env") === "development") {
 
 app.get("/",async (req, res) => {
   await redisClient.set("key", "hello it is from node using docker hub!");
-  // const value = await redisClient.get("key");
-  // await redisClient.disconnect();
+  
+  
   console.log(`traffic ${os.hostname}`);
   res.send("mostafa1 hello from docker image with watchtower");
 });
@@ -78,7 +78,7 @@ app.get("/",async (req, res) => {
 app.get("/data",async (req, res) => {
   
   const value = await redisClient.get("key");
-  // await redisClient.disconnect();
+
   res.send(value);
 });
 
